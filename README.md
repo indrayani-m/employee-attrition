@@ -283,20 +283,6 @@ This model is based solely on historical employee information available in the d
 
 ---
 
-# 🚀 Future Improvements
-
-Potential enhancements for this project include:
-
-- Hyperparameter tuning using GridSearchCV or RandomizedSearchCV.
-- Handling class imbalance using SMOTE and comparing results.
-- Deploying the model as a web application using Streamlit.
-- Performing model explainability using SHAP or LIME.
-- Building an interactive HR dashboard using Power BI or Tableau.
-- Experimenting with XGBoost, LightGBM, or CatBoost.
-- Implementing automated model retraining for new employee data.
-
----
-
 # 👩‍💻 Author
 
 **Indrayani Mude**
