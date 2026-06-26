@@ -238,7 +238,7 @@ Based on the analysis, the following recommendations are proposed:
 
 A non-technical executive summary prepared for HR leadership is available here:
 
-📄 **[Executive Summary](summary.pdf)**
+📄 **[Executive Summary](summary_week2.pdf)**
 
 ---
 
