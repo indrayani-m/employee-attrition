@@ -1,55 +1,51 @@
 # Employee Attrition Prediction using Machine Learning
 
-> **Machine Learning Internship – Week 2 Project**
+> **AI & Data Science Internship – Week 2 Project**
 
-Predicting employee attrition using machine learning and translating analytical findings into actionable Human Resources (HR) recommendations.
+An end-to-end Machine Learning project that predicts employee attrition using the IBM HR Analytics dataset and provides actionable HR insights through data analysis, predictive modeling, and business recommendations.
+The project was completed as part of the XYLOFYAI's AI & Data Science Internship – Week 2 Project.
 
 ---
 
 # 📖 Project Overview
 
-Employee attrition is one of the biggest challenges faced by organizations across industries. Losing experienced employees results in increased recruitment costs, onboarding expenses, knowledge loss, reduced productivity, and disruption of ongoing projects.
+Employee attrition is a major concern for organizations because losing experienced employees leads to increased recruitment costs, longer onboarding periods, reduced productivity, and knowledge loss.
 
-The objective of this project is to analyze historical employee information to identify patterns associated with employee turnover and develop a predictive machine learning model capable of identifying employees who are more likely to leave the organization.
+This project analyzes historical employee data to identify patterns associated with employee turnover and builds a predictive machine learning model capable of identifying employees who are more likely to leave the organization.
 
-Beyond prediction, this project emphasizes translating analytical findings into practical business recommendations that HR teams can use to improve employee retention.
+Unlike a traditional machine learning project, this work also focuses on translating technical findings into meaningful business recommendations that can help Human Resources (HR) improve employee retention.
 
 ---
 
 # 🎯 Problem Statement
 
-Every organization experiences employee turnover, but unexpected attrition can significantly affect business operations.
+The objective of this project is to answer the following business questions:
 
-The objective of this project is to answer questions such as:
-
-* Which employees are more likely to leave?
-* Which departments experience the highest turnover?
-* Does salary alone explain employee attrition?
-* What workplace factors contribute most to employee resignation?
-* How can HR proactively improve employee retention?
+* Which employees are more likely to leave the organization?
+* Which departments and job roles experience the highest attrition?
+* Does salary alone explain employee turnover?
+* Which workplace factors contribute most to employee attrition?
+* How can HR proactively reduce employee turnover?
 
 ---
 
-# 📂 Dataset Information
+# 📂 Dataset
 
-**Dataset Name**
+**Dataset:** IBM HR Analytics Employee Attrition & Performance
 
-IBM HR Analytics Employee Attrition & Performance
-
-**Source**
-
+**Source:**
 https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
 
 ### Dataset Statistics
 
-| Property               |                     Value |
-| ---------------------- | ------------------------: |
-| Total Employees        |                      1470 |
-| Features               | 35 (before preprocessing) |
-| Target Variable        |                 Attrition |
-| Employees Stayed       |                      1233 |
-| Employees Left         |                       237 |
-| Overall Attrition Rate |                    ~16.1% |
+| Property          |     Value |
+| ----------------- | --------: |
+| Total Employees   |      1470 |
+| Original Features |        35 |
+| Target Variable   | Attrition |
+| Employees Stayed  |      1233 |
+| Employees Left    |       237 |
+| Attrition Rate    |     16.1% |
 
 Target Variable:
 
@@ -60,93 +56,116 @@ Target Variable:
 
 # 🛠 Technologies Used
 
-| Tool         | Purpose                              |
-| ------------ | ------------------------------------ |
-| Python       | Programming Language                 |
-| Google Colab | Development Environment              |
-| Pandas       | Data Loading & Manipulation          |
-| NumPy        | Numerical Operations                 |
-| Matplotlib   | Data Visualization                   |
-| Seaborn      | Statistical Visualization            |
-| Scikit-learn | Machine Learning Models & Evaluation |
+* Python
+* Google Colab
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
 
 ---
 
-# 📌 Project Workflow
+# ⚙️ Project Workflow
 
-The project follows a complete machine learning pipeline.
+The project follows a complete Machine Learning pipeline:
 
-## 1. Data Loading
-
-* Imported the HR dataset
-* Examined dataset dimensions
-* Identified feature types
-* Calculated overall attrition rate
+1. Data Loading
+2. Data Exploration
+3. Data Cleaning
+4. Data Preprocessing
+5. Exploratory Data Analysis (EDA)
+6. Feature Engineering
+7. Model Building
+8. Model Evaluation
+9. Feature Importance Analysis
+10. HR Insights & Business Recommendations
 
 ---
 
-## 2. Data Cleaning
+# 🔧 Data Preprocessing
 
-The dataset was prepared for machine learning by:
+The following preprocessing steps were performed before model training:
 
-* Checking missing values
-* Removing duplicate records
-* Removing irrelevant columns
+* Checked for missing values
+* Removed irrelevant features
 
   * EmployeeNumber
   * EmployeeCount
-  * Over18
   * StandardHours
-* Encoding the target variable
-* Applying One-Hot Encoding to categorical variables
-* Standardizing numerical features using StandardScaler
+  * Over18
+* Converted the target variable (Yes/No → 1/0)
+* Applied One-Hot Encoding to categorical variables
+* Standardized numerical features using StandardScaler
+* Split the dataset into 80% training and 20% testing sets
 
 ---
 
-## 3. Exploratory Data Analysis (EDA)
+# 📊 Exploratory Data Analysis
 
-Several business-focused analyses were performed to understand employee turnover patterns.
+The exploratory analysis focused on identifying business patterns behind employee attrition.
 
 The following questions were investigated:
 
 * Which department experiences the highest attrition?
-* Which job roles are most affected?
-* Does salary influence employee attrition?
-* How does work-life balance relate to employee turnover?
-* During which stage of employment do employees usually resign?
-
-The notebook includes visualizations such as:
-
-* Department-wise Attrition Rate
-* Job Role-wise Attrition Rate
-* Monthly Income vs Attrition
-* Work-Life Balance vs Attrition
-* Years at Company vs Attrition
+* Which job role is most vulnerable?
+* Does salary influence attrition?
+* How does work-life balance affect employee turnover?
+* At what stage of employment do employees usually resign?
 
 ---
 
-## 4. Machine Learning Models
+## Department-wise Attrition
 
-Three classification models were trained and compared.
-
-| Model                        |
-| ---------------------------- |
-| Logistic Regression          |
-| Random Forest Classifier     |
-| Gradient Boosting Classifier |
-
-The dataset was divided into:
-
-* **Training Set:** 80%
-* **Testing Set:** 20%
-
-To reduce the impact of class imbalance, `class_weight='balanced'` was used wherever supported.
+![Department Attrition](charts/AttritionRateByDept.png)
 
 ---
 
-## 5. Model Evaluation
+## Job Role-wise Attrition
 
-Models were evaluated using multiple performance metrics:
+![Job Role Attrition](charts/AttritionRateByJobRole.png)
+
+---
+
+## Monthly Income vs Attrition
+
+![Monthly Income](charts/MonthlyIncomeByAttrition.png)
+
+---
+
+## Work-Life Balance vs Attrition
+
+![Work Life Balance](charts/AttritionRateByWorkLife.png)
+
+---
+
+## Years at Company vs Attrition
+
+![Years At Company](charts/AttritionVSYearsAtCompany.png)
+
+---
+
+## Distribution of Employees Who Left
+
+![Distribution](charts/DistOfEmployees.png)
+
+---
+
+# 🤖 Machine Learning Models
+
+Three classification models were trained and evaluated.
+
+* Logistic Regression
+* Random Forest Classifier
+* Gradient Boosting Classifier
+
+To address class imbalance, **class_weight='balanced'** was applied wherever supported.
+
+---
+
+# 📈 Model Performance
+
+The models were evaluated using:
 
 * Precision
 * Recall
@@ -154,46 +173,52 @@ Models were evaluated using multiple performance metrics:
 * ROC-AUC Score
 * Confusion Matrix
 
-A comparison table was created to determine the best-performing model.
+![Model Comparison](charts/ModelComparison.png)
+
+**Selected Model:** Logistic Regression
+
+Logistic Regression achieved the highest Recall, F1-Score, and ROC-AUC, making it the most suitable model for identifying employees who are likely to leave.
 
 ---
 
-## 6. Feature Importance Analysis
+## ROC Curve Comparison
 
-After selecting the best-performing model, feature importance analysis was conducted to determine which employee characteristics most strongly influenced attrition predictions.
-
-The ten most influential features were visualized using a horizontal bar chart.
+![ROC Curve](charts/ROC_Curve.png)
 
 ---
 
-# 📊 Key Findings
+## Confusion Matrix
 
-The exploratory analysis produced several important business insights.
+![Confusion Matrix](charts/ConfusionMatrixLR.png)
 
-### Department Analysis
+---
 
-* Sales recorded the highest attrition rate (~20.6%).
-* Research & Development showed the lowest attrition.
+# 📌 Top 10 Important Features
 
-### Job Role Analysis
+The most influential factors affecting employee attrition identified by the selected model are shown below.
 
-* Sales Representatives exhibited the highest attrition (~39.8%).
-* Laboratory Technicians also experienced relatively high turnover.
-* Managers and Research Directors showed the lowest attrition.
+![Feature Importance](charts/Top10ImpFeatures.png)
 
-### Salary Analysis
+Top contributing factors include:
 
-Employees who left generally earned lower salaries.
+* Laboratory Technician role
+* Overtime
+* Frequent Business Travel
+* Total Working Years
+* Job Level
+* Sales Representative role
+* Years Since Last Promotion
+* Sales Department
 
-However, salary alone was insufficient to explain employee turnover, indicating that workplace conditions and job characteristics also influence attrition.
+---
 
-### Work-Life Balance
+# 📊 Key Business Insights
 
-Employees reporting poor work-life balance experienced substantially higher attrition than employees reporting better work-life balance.
-
-### Employee Tenure
-
-Most resignations occurred during the early years of employment, suggesting that onboarding and early-career engagement are critical.
+* The **Sales department** recorded the highest employee attrition (~20.6%).
+* **Sales Representatives** experienced the highest turnover (~39.8%) among all job roles.
+* Employees with poor **Work-Life Balance** showed an attrition rate of approximately **31.2%**, nearly twice that of employees reporting better work-life balance.
+* Employees who left generally had lower monthly incomes, although salary alone did not explain attrition.
+* Most employees resigned during their first few years with the company, indicating that early employment is the most critical period for retention.
 
 ---
 
@@ -201,25 +226,19 @@ Most resignations occurred during the early years of employment, suggesting that
 
 Based on the analysis, the following recommendations are proposed:
 
-* Prioritize retention initiatives within the Sales department.
-* Conduct regular retention discussions with Sales Representatives and Laboratory Technicians.
+* Prioritize retention efforts within the Sales department, particularly for Sales Representatives.
+* Identify employees who frequently work overtime or travel for business and conduct regular retention conversations.
 * Improve work-life balance through flexible work arrangements and workload management.
-* Strengthen onboarding, mentoring, and career development programs during employees' first few years.
-* Monitor employees working frequent overtime or traveling regularly for business.
+* Strengthen onboarding, mentoring, and career development programs for employees during their first few years.
+* Use predictive analytics alongside HR expertise to proactively identify employees at higher risk of leaving.
 
 ---
 
-# 📈 Project Outputs
+# 📑 Executive Summary
 
-The project includes:
+A non-technical executive summary prepared for HR leadership is available here:
 
-* Complete exploratory data analysis
-* Machine learning model comparison
-* Confusion Matrix
-* ROC Curve
-* Top 10 Important Features
-* HR-focused business recommendations
-* Executive Summary for non-technical stakeholders
+📄 **[Executive Summary](summary.pdf)**
 
 ---
 
@@ -232,31 +251,35 @@ EmployeeAttrition_Indrayani/
 ├── HR_Attrition.csv
 ├── README.md
 ├── summary.pdf
+│
 └── charts/
     ├── AttritionRateByDept.png
     ├── AttritionRateByJobRole.png
     ├── MonthlyIncomeByAttrition.png
     ├── AttritionRateByWorkLife.png
     ├── AttritionVSYearsAtCompany.png
+    ├── DistOfEmployees.png
+    ├── ModelComparison.png
+    ├── ROC_Curve.png
     ├── ConfusionMatrixLR.png
-    ├── Top10ImpFeatures.png
-    └── ROC_Curve.png
+    └── Top10ImpFeatures.png
 ```
 
 ---
 
 # ▶️ Running the Project
 
-1. Open `analysis.ipynb` in Google Colab.
-2. Execute all cells from top to bottom.
-3. The dataset is automatically downloaded using **gdown**, so no manual upload is required.
-4. The notebook generates all charts, model evaluation metrics, and business recommendations.
+1. Clone the repository or download the ZIP file.
+2. Open **analysis.ipynb** in Google Colab or Jupyter Notebook.
+3. Run all notebook cells sequentially.
+4. The dataset is automatically downloaded from Google Drive using **gdown**, so no manual upload is required.
+5. Review the generated visualizations, model evaluation, and HR recommendations.
 
 ---
 
-# ⚠️ Project Limitation
+# ⚠️ Limitations
 
-The prediction model is built using historical employee information available in the dataset. Factors such as personal circumstances, organizational restructuring, economic conditions, employee relationships, or future policy changes are not included. Therefore, the model should be used as a decision-support tool alongside HR expertise rather than as the sole basis for employee-related decisions.
+This model is based solely on historical employee information available in the dataset. Personal circumstances, organizational restructuring, economic conditions, management style, and future policy changes are not captured. Therefore, the model should be used as a decision-support tool alongside HR expertise rather than as the sole basis for employee-related decisions.
 
 ---
 
@@ -264,6 +287,4 @@ The prediction model is built using historical employee information available in
 
 **Indrayani Mude**
 
-Machine Learning Internship – Week 2
-
-Employee Attrition Prediction using Machine Learning
+AI & Data Science Internship Project Week 2 – XYLOFY AI
